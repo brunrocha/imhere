@@ -6,6 +6,7 @@ import { Participant } from '../../components/Participant';
 import { styles } from './styles'
 
 export default function Home() {
+  const participants = ['Rudeous', 'Elis', 'Sylphiet', 'Roxane']
 
   function handleParticipantAdd() {
     console.log('Você clicou no botão de Adicionar!');
@@ -39,7 +40,16 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant name="Bruno" onRemove={() => handleParticipantRemove("Bruno")} />
+      {
+        participants.map(participant => (
+          <Participant 
+            key={participant}
+            name={participant} 
+            onRemove={() => handleParticipantRemove(participant)} 
+          />
+        ))
+      }
+
     </View>
   );
 }
