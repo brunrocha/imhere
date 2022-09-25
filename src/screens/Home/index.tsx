@@ -41,7 +41,7 @@ export default function Home() {
       </View>
 
       <FlatList 
-        data={participants}
+        data={[]}
         keyExtractor={item => item}
         renderItem={({ item }) => (
           <Participant 
@@ -51,6 +51,11 @@ export default function Home() {
           />
         )}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => (
+          <Text style={styles.listEmptyText}>
+            Ninguém chegou no evento ainda? Adicione participante a sua lista de presença.
+          </Text>
+        )}
       />
     </View>
   );
