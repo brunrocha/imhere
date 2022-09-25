@@ -3,11 +3,11 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 import { styles } from "./styles";
 
-export function Participant(){
+export function Participant({ name }){
   return(
     <View style={styles.container}>
       <Text style={styles.name}>
-        Bruno Rocha
+        { name }
       </Text>
 
       <TouchableOpacity style={styles.button}>
