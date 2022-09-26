@@ -5,7 +5,7 @@ import { Participant } from '../../components/Participant';
 
 import { styles } from './styles'
 
-export default function Home() {
+export function Home() {
   const participants = ['Rudeous', 'Elis', 'Sylphiet', 'Roxane', 'Zeneth', 'Paul', 'Orsted', 'Hitogami', 'Laplace', 'Jughard']
 
   function handleParticipantAdd() {
@@ -41,7 +41,7 @@ export default function Home() {
       </View>
 
       <FlatList 
-        data={[]}
+        data={participants}
         keyExtractor={item => item}
         renderItem={({ item }) => (
           <Participant 
